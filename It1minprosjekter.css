@@ -1,0 +1,71 @@
+body{
+background-image: url(https://images-cdn.welcomesoftware.com/Zz0zZTliMjQ4MzhlNGExMWViYmJiMjFiZTI2ZWNmN2MzZA==);
+font-family: "Helvetica", Sans-Serif;
+}
+
+
+header {
+  
+  display: flex;
+  color: rgb(165, 136, 241);
+}
+
+header:before,
+header:after {
+  content: '';
+  margin: auto 1em;
+  border-bottom: solid 1px;
+  flex: 1;
+}
+
+h1 {
+  position: relative;
+  padding: 0.25em 1em;
+  overflow: hidden;
+  background: linear-gradient(currentcolor, currentcolor) no-repeat top center, linear-gradient(currentcolor, currentcolor) no-repeat bottom center;
+  background-size: calc(100% - 1.65em) 1px;
+}
+
+h1:before,
+h1:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: solid 1px;
+  border-top: none;
+  border-bottom: none;
+  transform: skew(45deg)
+}
+
+h1:after {
+  transform: skew(-45deg)
+}
+
+
+
+
+
+a:hover, a:active {
+  background-color: green;
+  color: white;
+}
+
+#AAAA{
+  display: flex;
+  justify-content: center;
+}
+
+a {
+ border: solid black;
+  flex-grow: 1;
+  margin: 10px;
+  padding: 20px;
+  justify-content:center ;
+}
+
+
+
+ 
