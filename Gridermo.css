@@ -1,0 +1,165 @@
+.usynlig{
+    opacity: 0%;
+}
+
+section{
+    display: grid;
+    grid-template-columns: repeat(19,80px);
+    gap: 4px;
+    grid-template-rows: repeat(7,80px);
+    text-align: center;
+    
+
+}
+section>div{
+    border: solid #22303c;
+    padding: auto;
+    background-color: white;
+
+    
+}
+.span-16{
+    grid-column: span 16;;
+}
+.span-9{
+    grid-column: span 10;
+}
+
+.span-3{
+    grid-column: span 2;
+}
+
+.section2{
+    margin: 30px;
+display: grid;
+grid-template-columns: repeat(18,1fr);
+gap: 4px;
+grid-template-rows: repeat(2,75px);
+text-align: center;
+
+}
+
+.section2>div{
+    border: solid #22303c;
+    
+}
+
+p{
+    font-size: small;
+}
+
+section :hover {
+    scale:1.25
+}
+
+.section2 div :hover{
+scale: 1.25;
+}
+
+body{
+    background-color: #15202b;;
+}
+
+
+.ikkemetaller{
+ background-color: #A5F0c5;
+}
+
+
+.akaliemetall{
+background-color: #C8B88A;
+}
+
+.jordakalie{
+    background-color: #D5F591;
+}
+
+.inskudd{
+    background-color: #CF6679;
+}
+
+.halvmetall{
+    background-color:#03DAC6 ;
+}
+
+
+.edelgass{
+    background-color: #BB86FC;
+}
+
+.post{
+    background-color: #54c3CC;
+}
+
+.la{
+    background-color: pink;
+}
+
+
+.akti{
+    background-color: #A9c9AC;
+}
+
+
+
+
+ 
+header {
+   
+    display: flex;
+    color: rgb(165, 136, 241);
+  }
+  
+  header:before,
+  header:after {
+    content: '';
+    margin: auto 1em;
+    border-bottom: solid 1px;
+    flex: 1;
+  }
+  
+  h1 {
+    position: relative;
+    padding: 0.25em 1em;
+    overflow: hidden;
+    background: linear-gradient(currentcolor, currentcolor) no-repeat top center, linear-gradient(currentcolor, currentcolor) no-repeat bottom center;
+    background-size: calc(100% - 1.65em) 1px;
+ }
+  
+  h1:before,
+  h1:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: solid 1px;
+    border-top: none;
+    border-bottom: none;
+    transform: skew(45deg)
+  }
+  
+  h1:after {
+    transform: skew(-45deg)
+  }
+
+
+
+
+  .topp{
+    display: grid;
+    grid-template-columns: repeat(18,80px);
+    grid-template-rows: repeat(1,80px);
+    gap: 4px;
+    text-align: center;
+    color: rgb(165, 136, 241) ;
+    justify-content: center;
+    
+  }
+
+  .uten{
+    border-color:#15202b ;
+    background-color: #15202b;
+    color: rgb(165, 136, 241) ;
+  }
