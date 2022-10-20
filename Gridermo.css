@@ -4,9 +4,9 @@
 
 section{
     display: grid;
-    grid-template-columns: repeat(19,80px);
+    grid-template-columns: repeat(19,1fr);
     gap: 4px;
-    grid-template-rows: repeat(7,80px);
+    grid-template-rows: repeat(7,1fr);
     text-align: center;
     
 
