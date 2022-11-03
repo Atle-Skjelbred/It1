@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjett tallet</title>
+    <style>
+h1{
+    font-size: 1000%;
+}
+    </style>
+</head>
+<style>
+    h1{
+        font-size: 100px;
+    }
+</style>
+<body>
+    <script>
+      
+  function refresh(){
+        window.location.reload("Refresh")
+      }
+ document.write('<center>')
+document.write('<h1>')
+
+  let riktigTall= ("Afhy1");
+  let gjettet = prompt("Hva er passordet?");
+
+
+  if (gjettet === riktigTall) {
+    document.write("Du valgte riktig passord"); 
+} 
+else if ( gjettet=="?lengde"){
+    document.write("Passordet er "+riktigTall.length+"tegn!");
+}
+else if (gjettet=="?1"){
+    document.write("Siffer nummer 1 er " + riktigTall[0])
+}
+else if (gjettet=="?2"){
+    document.write(" Siffer nummer 2 er " + riktigTall[1])
+}
+else if (gjettet=="?3"){
+    document.write("Siffer nummer 3 er " + riktigTall[2])
+}
+else if (gjettet=="?4"){
+    document.write("Siffer nummer 4 er " + riktigTall[3])
+}
+else if (gjettet=="?siste"){
+    document.write("Siffer nummer 5 er " + riktigTall[4])
+}
+else if (gjettet=="?store"){
+    document.write("Passordet er "+ riktigTall.toUpperCase())
+}
+else if (gjettet=="?små"){
+    document.write("Passordet er "+ riktigTall.toLowerCase())
+}
+else{
+    document.write("Feil passord!!!")
+}
+
+
+  
+  
+
+    </script>
+    <p><input type="button" value="Refresh" onClick="refresh(this)"></p>
+</body>
+</html>
