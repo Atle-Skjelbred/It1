@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="NO">
+  <head>
+    <link rel="stylesheet" href="Yatzy.css" />
+    <title>Yatzy</title>
+  </head>
+  <body>
+    <script>
+      disableSjekker1 = 0
+      disableSjekker2 = 0
+      disableSjekker3 = 0
+      disableSjekker4 = 0
+      disableSjekker5 = 0
+      antallKast = 0
+      kastIgjen = 0
+      total6 = 0
+      total5 = 0
+      total4 = 0
+      total3 = 0
+      total2 = 0
+      total1 = 0
+      sum1=0
+
+      function rollDice() {
+        var terning1 = document.getElementById('terning1')
+        var terning2 = document.getElementById('terning2')
+        var terning3 = document.getElementById('terning3')
+        var terning4 = document.getElementById('terning4')
+        var terning5 = document.getElementById('terning5')
+
+        t1 = Math.floor(Math.random() * 6) + 1
+
+        t2 = Math.floor(Math.random() * 6) + 1
+
+        t3 = Math.floor(Math.random() * 6) + 1
+
+        t4 = Math.floor(Math.random() * 6) + 1
+
+        t5 = Math.floor(Math.random() * 6) + 1
+
+        if (antallKast < 100) {
+          if (disableSjekker1 == 0) {
+            terning1.innerHTML = t1
+          }
+
+          if (disableSjekker2 == 0) {
+            terning2.innerHTML = t2
+          }
+          if (disableSjekker3 == 0) {
+            terning3.innerHTML = t3
+          }
+          if (disableSjekker4 == 0) {
+            terning4.innerHTML = t4
+          }
+          if (disableSjekker5 == 0) {
+            terning5.innerHTML = t5
+          }
+          antallKast++
+        }
+      }
+
+      function Stop1() {
+        if (antallKast < 3) {
+          if (disableSjekker1 == 0) {
+            disableSjekker1++
+            terning1.style.borderColor = 'red'
+          } else if (disableSjekker1 == 1) {
+            disableSjekker1--
+            terning1.style.borderColor = 'black'
+          }
+        }
+      }
+
+      function Stop2() {
+        if (antallKast < 3) {
+          if (disableSjekker2 == 0) {
+            disableSjekker2++
+            terning2.style.borderColor = 'red'
+          } else if (disableSjekker2 == 1) {
+            disableSjekker2--
+            terning2.style.borderColor = 'black'
+          }
+        }
+      }
+      function Stop3() {
+        if (antallKast < 3) {
+          if (disableSjekker3 == 0) {
+            disableSjekker3++
+            terning3.style.borderColor = 'red'
+          } else if (disableSjekker3 == 1) {
+            disableSjekker3--
+            terning3.style.borderColor = 'black'
+          }
+        }
+      }
+      function Stop4() {
+        if (antallKast < 3) {
+          if (disableSjekker4 == 0) {
+            disableSjekker4++
+            terning4.style.borderColor = 'red'
+          } else if (disableSjekker4 == 1) {
+            disableSjekker4--
+            terning4.style.borderColor = 'black'
+          }
+        }
+      }
+      function Stop5() {
+        if (antallKast < 3) {
+          if (disableSjekker5 == 0) {
+            disableSjekker5++
+            terning5.style.borderColor = 'red'
+          } else if (disableSjekker5 == 1) {
+            disableSjekker5--
+            terning5.style.borderColor = 'black'
+          }
+        }
+      }
+
+      function Ny() {
+        antallKast = 0
+        if ((disableSjekker1 = 1)) {
+          Stop1()
+        }
+        if ((disableSjekker2 = 1)) {
+          Stop2()
+        }
+        if ((disableSjekker3 = 1)) {
+          Stop3()
+        }
+        if ((disableSjekker4 = 1)) {
+          Stop4()
+        }
+        if ((disableSjekker5 = 1)) {
+          Stop5()
+        }
+
+      }
+
+      function sum(){
+        var sum = document.getElementById('sum')
+sum1=total1+total2+total3+total4+total5+total6
+sum.innerHTML=sum1
+
+var bonus = document.getElementById('bonus')
+if(sum.innerHTML>=63){
+  bonus1=50
+}
+else{bonus1=0}
+bonus.innerHTML=bonus1
+      }
+    
+
+      function enere() {
+        var enere = document.getElementById('enere')
+        
+
+        if (terning1.innerHTML == 1) {
+          total1++
+        }
+        if (terning2.innerHTML == 1) {
+          total1++
+        }
+        if (terning3.innerHTML == 1) {
+          total1++
+        }
+        if (terning4.innerHTML == 1) {
+          total1++
+        }
+        if (terning5.innerHTML == 1) {
+          total1++
+        }
+
+        enere.innerHTML = total1
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+
+      function toere() {
+        var toere = document.getElementById('toere')
+        
+
+        if (terning1.innerHTML == 2) {
+          total2 += 2
+        }
+        if (terning2.innerHTML == 2) {
+          total2 += 2
+        }
+        if (terning3.innerHTML == 2) {
+          total2 += 2
+        }
+        if (terning4.innerHTML == 2) {
+          total2 += 2
+        }
+        if (terning5.innerHTML == 2) {
+          total2 += 2
+        }
+        toere.innerHTML = total2
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      
+      }
+      function tre() {
+        var tre = document.getElementById('tre')
+        total3 = 0
+
+        if (terning1.innerHTML == 3) {
+          total3 += 3
+        }
+        if (terning2.innerHTML == 3) {
+          total3 += 3
+        }
+        if (terning3.innerHTML == 3) {
+          total3 += 3
+        }
+        if (terning4.innerHTML == 3) {
+          total3 += 3
+        }
+        if (terning5.innerHTML == 3) {
+          total3 += 3
+        }
+        tre.innerHTML = total3
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+      function fire() {
+        var fire = document.getElementById('fire')
+        
+
+        if (terning1.innerHTML == 4) {
+          total4 += 4
+        }
+        if (terning2.innerHTML == 4) {
+          total4 += 4
+        }
+        if (terning3.innerHTML == 4) {
+          total4 += 4
+        }
+        if (terning4.innerHTML == 4) {
+          total4 += 4
+        }
+        if (terning5.innerHTML == 4) {
+          total4 += 4
+        }
+        fire.innerHTML = total4
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+      function fem() {
+        var fem = document.getElementById('fem')
+        
+
+        if (terning1.innerHTML == 5) {
+          total5 += 5
+        }
+        if (terning2.innerHTML == 5) {
+          total5 += 5
+        }
+        if (terning3.innerHTML == 5) {
+          total5 += 5
+        }
+        if (terning4.innerHTML == 5) {
+          total5 += 5
+        }
+        if (terning5.innerHTML == 5) {
+          total5 += 5
+        }
+        fem.innerHTML = total5
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+      function seks() {
+        var seks = document.getElementById('seks')
+        
+
+        if (terning1.innerHTML == 6) {
+          total6 += 6
+        }
+        if (terning2.innerHTML == 6) {
+          total6 += 6
+        }
+        if (terning3.innerHTML == 6) {
+          total6 += 6
+        }
+        if (terning4.innerHTML == 6) {
+          total6 += 6
+        }
+        if (terning5.innerHTML == 6) {
+          total6 += 6
+        }
+        seks.innerHTML = total6
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+
+
+
+      function par() {
+        var par = document.getElementById('par')
+        par1 = 0
+        par2 = 0
+        par3 = 0
+        par4 = 0
+        par5 = 0
+        par6 = 0
+        par7 = 0
+        par8 = 0
+        par9 = 0
+        par10 = 0
+        par11 = 0
+        if (t1 == t2) {
+          par1 = t1
+          console.log(t1)
+        }
+        if (t1 == t2) {
+          par2 = t1
+        }
+        if (t1 == t3) {
+          par3 = t1
+        }
+        if (t1 == t4) {
+          par4 = t1
+        }
+        if (t1 == t5) {
+          par5 = t1
+        }
+        if (t2 == t3) {
+          par6 = t2
+        }
+        if (t2 == t4) {
+          par7 = t2
+        }
+        if (t2 == t5) {
+          par8 = t2
+        }
+        if (t3 == t4) {
+          par9 = t3
+        }
+        if (t3 == t5) {
+          par10 = t3
+        }
+        if (t4 == t5) {
+          par11 = t4
+        }
+
+        const allepar = [
+          par1,
+          par2,
+          par3,
+          par4,
+          par5,
+          par6,
+          par7,
+          par8,
+          par9,
+          par10,
+          par11,
+        ]
+
+        par.innerHTML = Math.max(...allepar)
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+
+      function toPar() {
+        var topar = document.getElementById('topar')
+        par1 = 0
+        par2 = 0
+        par3 = 0
+        par4 = 0
+        par5 = 0
+        par6 = 0
+        par7 = 0
+        par8 = 0
+        par9 = 0
+        par10 = 0
+        par11 = 0
+        if (t1 == t2) {
+          par1 = t1
+        }
+        if (t1 == t2) {
+          par2 = t1
+        }
+        if (t1 == t3) {
+          par3 = t1
+        }
+        if (t1 == t4) {
+          par4 = t1
+        }
+        if (t1 == t5) {
+          par5 = t1
+        }
+        if (t2 == t3) {
+          par6 = t2
+        }
+        if (t2 == t4) {
+          par7 = t2
+        }
+        if (t2 == t5) {
+          par8 = t2
+        }
+        if (t3 == t4) {
+          par9 = t3
+        }
+        if (t3 == t5) {
+          par10 = t3
+        }
+        if (t4 == t5) {
+          par11 = t4
+        }
+
+        const numbers = [
+          par1,
+          par2,
+          par3,
+          par4,
+          par5,
+          par6,
+          par7,
+          par8,
+          par9,
+          par10,
+          par11,
+        ]
+
+        numbers.sort((a, b) => a - b)
+
+        numbers.reverse()
+
+        t = numbers[1]
+        m = numbers[0]
+
+        topar.innerHTML = (m + t) * 2
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+
+      function trelike() {
+        var trelike = document.getElementById('trelike')
+        if (
+          terning1.innerHTML == terning2.innerHTML &&
+          terning1.innerHTML == terning3.innerHTML
+        ) {
+          like = terning1.innerHTML
+        } else if (
+          terning2.innerHTML == terning3.innerHTML &&
+          terning2.innerHTML == terning5.innerHTML
+        ) {
+          like = terning2.innerHTML
+        } else if (
+          terning3.innerHTML == terning4.innerHTML &&
+          terning3.innerHTML == terning5.innerHTML
+        ) {
+          like = terning3.innerHTML
+        } else if (
+          terning1.innerHTML == terning3.innerHTML &&
+          terning1.innerHTML == terning5.innerHTML
+        ) {
+          like = terning1.innerHTML
+        } else if (
+          terning2.innerHTML == terning1.innerHTML &&
+          terning2.innerHTML == terning4.innerHTML
+        ) {
+          like = terning2.innerHTML
+        } else if (
+          terning2.innerHTML == terning3.innerHTML &&
+          terning2.innerHTML == terning4.innerHTML
+        ) {
+          like = terning2.innerHTML
+        } else if (
+          terning2.innerHTML == terning3.innerHTML &&
+          terning2.innerHTML == terning5.innerHTML
+        ) {
+          like = terning2.innerHTML
+        } else if (
+          terning2.innerHTML == terning4.innerHTML &&
+          terning2.innerHTML == terning1.innerHTML
+        ) {
+          like = terning2.innerHTML
+        } else if (
+          terning1.innerHTML == terning3.innerHTML &&
+          terning1.innerHTML == terning4.innerHTML
+        ) {
+          like = terning1.innerHTML
+        } else if (
+          terning1.innerHTML == terning2.innerHTML &&
+          terning1.innerHTML == terning5.innerHTML
+        ) {
+          like = terning2.innerHTML
+        } else {
+          like = 0
+        }
+
+
+        trelike.innerHTML = like * 3
+        antallKast = 0
+        terning1.innerHTML = '?'
+        terning2.innerHTML = '?'
+        terning3.innerHTML = '?'
+        terning4.innerHTML = '?'
+        terning5.innerHTML = '?'
+        disableSjekker1 = 0
+        disableSjekker2 = 0
+        disableSjekker3 = 0
+        disableSjekker4 = 0
+        disableSjekker5 = 0
+        terning1.style.borderColor = 'black'
+        terning2.style.borderColor = 'black'
+        terning3.style.borderColor = 'black'
+        terning4.style.borderColor = 'black'
+        terning5.style.borderColor = 'black'
+      }
+
+      function fireLike() {}
+    </script>
+
+    <div id="terning1" class="dice">?</div>
+    <div id="terning2" class="dice">?</div>
+    <div id="terning3" class="dice">?</div>
+    <div id="terning4" class="dice">?</div>
+    <div id="terning5" class="dice">?</div>
+    <button id="a" onclick="rollDice()">Kast terning</button>
+    <button class="b" onclick="Stop1()">Stop</button>
+    <button class="b" onclick="Stop2()">Stop</button>
+    <button class="b" onclick="Stop3()">Stop</button>
+    <button class="b" onclick="Stop4()">Stop</button>
+    <button class="b" onclick="Stop5()">Stop</button>
+    <button id="c" onclick="Ny()">Ny runde</button>
+    <button onclick="Sum()">a</button>
+
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td ondblclick="Ny()" onclick="enere()" id="enere" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td onclick="toere()" id="toere" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td onclick="tre()" id="tre" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td onclick="fire()" id="fire" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td onclick="fem()" id="fem" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td onclick="seks()" id="seks" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Sum</td>
+        <td onclick="sum()"  id="sum" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Bonus</td>
+        <td onclick="sum()"  id="bonus" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>1 par</td>
+        <td onclick="par()" id="par" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>2 par</td>
+        <td onclick="toPar()" id="topar" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>3 like</td>
+        <td onclick="trelike()" id="trelike" class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>4 like</td>
+        <td class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Liten straight</td>
+        <td class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Stor straight</td>
+        <td class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Hus</td>
+        <td class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Sjanse</td>
+        <td class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Yatzt</td>
+        <td class="score-column">-</td>
+      </tr>
+      <tr>
+        <td>Totalsum</td>
+        <td class="score-column">-</td>
+      </tr>
+    </table>
+  </body>
+</html>

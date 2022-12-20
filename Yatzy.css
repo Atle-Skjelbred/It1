@@ -1,0 +1,68 @@
+.dice {
+	position: relative;
+	left: 542.5px;
+	float:left;
+	width: 32px;
+	
+	border: black 3px solid;
+	padding: 10px;
+	font-size: 24px;
+	text-align: center;
+	margin: 5px;
+
+  }
+
+  #a{
+ position: absolute;
+ left: 680px;
+ top:120px ;
+ 
+  }
+
+  .b{
+	position: relative;
+	left: 205px;
+	float:left;
+	top: 60px;
+	margin: 12px;
+
+	
+  }
+
+
+
+h1{
+	position: absolute;
+	top: 200px;
+}
+
+#c{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+}
+
+
+
+body{
+	background-color: #00922c;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23053400' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+table {
+    border-collapse: collapse;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  .score-column {
+    width: 100px;
+    text-align: center;
+  }
+
