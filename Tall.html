@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="csskoder.css">
+    <style>
+       .A{
+        text-align: center;
+       }
+       button{
+        height: 40px
+        
+       }
+    </style>
+</head>
+<body>
+    <div class="A">
+    <h1>Tall</h1>
+    <button  id="1" onclick="trekk1()">0-100</button>
+    <button id="2" onclick="trekk2()"">8 gangeren</button>
+    <button id="3" onclick="trekk3()">Lille gangetabellen</button>
+    <input id="inpAntallTall" placeholder="Antall solgte" type="Number" />
+    <h1 id="txtResultat"></h1>
+    
+</div>
+    <script>
+       
+        inpAntallTall = document.getElementById('inpAntallTall')
+        var txtResultat = document.getElementById('txtResultat')
+        let i=1
+        var antallTall=1
+        
+        function trekk1(){
+            txtResultat.innerHTML=""
+            for (let i = 1; i <= 100; i++) {
+                txtResultat.innerHTML += " "+ i;
+            }
+            
+        }
+
+        function trekk2(){
+            txtResultat.innerHTML=""
+            for (let a = 8; a <= 100; a+=8) {
+    txtResultat.innerHTML += " "+ a;
+}
+        }
+        function trekk3(){
+            txtResultat.innerHTML=""
+           8
+
+        } 
+
+
+        
+    </script>
+</body>
+</html>

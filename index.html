@@ -4,23 +4,72 @@
 <head>
 <link rel="stylesheet" href="Index.css">
 <title>Mine prosjekter</title>
+<script src="Index.js"></script>
 </head>
 
 <body>
+   
     <header>
         <h1>Atle Skaug Skjelbred </h1>
       </header>
-      
+      <section>
 <div id="AAAA">
     
-    <a href="https://atle-skjelbred.github.io/It1/Lekeplass.html" target="_blank">Lekeplass</a>
-    <a href="https://atle-skjelbred.github.io/It1/Myhobby.html" target="_blank">Mango Loco</a>
-    <a href="https://atle-skjelbred.github.io/It1/LinktilUkeplan.html" target="_blank">Innlevering uke 39</a>
-    <a href="https://atle-skjelbred.github.io/It1/Gridermo.html" target="_blank">Periodesystemet</a>
-    <a href="https://atle-skjelbred.github.io/It1/js1.html" target="_blank">Gjett passordet?</a>
-     <a href="https://atle-skjelbred.github.io/It1/Yatzy.html" target="_blank">Yatzy</a>
+    <a class="Stor" href="https://atle-skjelbred.github.io/It1/Lekeplass.html" target="_blank">Lekeplass</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Myhobby.html" target="_blank">Mango Loco</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Ukeplan.html" target="_blank">Ukeplan</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Gridermo.html" target="_blank">Periodesystemet</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/js1.html" target="_blank">Gjett passordet?</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Yatzy.html" target="_blank">Yatzy</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Alder.html" target="_blank">Alder</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Kvadrat.html" target="_blank">Kvadrat</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Salg.html" target="_blank">Salg</a>
+    <a  class="Stor"href="https://atle-skjelbred.github.io/It1/Tall.html" target="_blank">Tall</a>
+ 
     
-</div>
+</div>  
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+      <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+      <a href="https://atle-skjelbred.github.io/It1/Lekeplass.html">Lekeplass</a>
+      <a href="https://atle-skjelbred.github.io/It1/Myhobby.html">Mango Loco</a>
+      <a href="https://atle-skjelbred.github.io/It1/Ukeplan.html">Ukeplan</a>
+      <a href="#https://atle-skjelbred.github.io/It1/Gridermo.html">Periodesystemet</a>
+      <a href="https://atle-skjelbred.github.io/It1/js1.html">Gjett passordet?</a>
+      <a href="https://atle-skjelbred.github.io/It1/Yatzy.html">Yatzy</a>
+      <a href=https://atle-skjelbred.github.io/It1/Alder.html"">Alder</a>
+      <a href="https://atle-skjelbred.github.io/It1/Kvadrat.html">Kvadrat</a>
+      <a href="https://atle-skjelbred.github.io/It1/Salg.html">Salg</a>
+      <a href="https://atle-skjelbred.github.io/It1/Tall.html"></a>
+      
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+      for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+        } else {
+          a[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+</section>
 
 </body>
 </html>
