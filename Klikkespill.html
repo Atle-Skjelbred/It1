@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      diva {
+        position: absolute;
+        background-color: blue;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="abc"></h1>
+    <div id="countdown"></div>
+    <button onclick="ny()">Start på nytt</button>
+    <script>
+      var b = 0
+      var abc = document.getElementById('abc')
+
+      var lyd = new Audio('Klikke.mp3')
+
+      function a(evt) {
+        if (timeleft > 0) {
+          var mittElement = document.createElement('diva')
+          var randomColor = Math.floor(Math.random() * 16777215).toString(16)
+          mittElement.style.top =
+            Math.floor(Math.random() * 600) + 1 - 25 + 'px'
+          mittElement.style.left =
+            Math.floor(Math.random() * 1500) + 1 - 25 + 'px'
+          mittElement.style.backgroundColor = '#' + randomColor
+          mittElement.onclick = fjern
+          document.body.appendChild(mittElement)
+          function remove() {
+            document.body.removeChild(mittElement)
+          }
+          setInterval(remove, 1500)
+        }
+      }
+      setInterval(a, 1500)
+
+      var fjern = function (evt) {
+        lyd.play()
+
+        evt.stopPropagation()
+        var minAnim = evt.target.animate(
+          [
+            { transform: 'scale(1)' },
+            {
+              transform:
+                'scale(0.0000000000000000000000000000000000000000000000000000000000000001)',
+            },
+          ],
+          200,
+        )
+        minAnim.onfinish = function () {
+          document.body.removeChild(evt.target)
+          b++
+          abc.innerHTML = 'Poeng ' + b
+        }
+      }
+      abc.innerHTML = 'Poeng ' + b
+
+      function ny() {
+  timeleft = 15
+  abc.innerHTML = 'Poeng ' + b
+  b = 0
+  
+  var downloadTimer = setInterval(function () {
+       if (timeleft <= 0) {
+         clearInterval(downloadTimer)
+         document.getElementById('countdown').innerHTML =
+ timeleft + ' Sekunder igjen'
+         alert('Du fikk ' + b + ' poeng!' + 'Du fikk ' + b + '/10 poeng!  '+b*10+"%")     
+         
+         
+       } else {
+         document.getElementById('countdown').innerHTML =
+           timeleft + ' Sekunder igjen'
+       }
+       timeleft -= 1
+     }, 1000)
+  
+}
+
+      var timeleft = 15
+      var downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+          clearInterval(downloadTimer)
+          document.getElementById('countdown').innerHTML =
+  timeleft + ' Sekunder igjen'
+          alert('Du fikk ' + b + ' poeng!' + 'Du fikk ' + b + '/10 poeng!  '+b*10+"%")          
+          
+          
+        } else {
+          document.getElementById('countdown').innerHTML =
+            timeleft + ' Sekunder igjen'
+        }
+        timeleft -= 1
+      }, 1000)
+
+      
+      
+      
+      
+      
+    </script>
+  </body>
+</html>
