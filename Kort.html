@@ -38,7 +38,7 @@
       input[type='number'],
       input[type='date'],
       input[type='radio'] textarea,
-      select {
+      #Sex {
         display: block;
         margin-top: 2px;
         margin-bottom: 10px;
@@ -64,9 +64,16 @@
         flex-direction: column;
         width: 400px;
       }
+      #Ba {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      
     </style>
   </head>
   <body>
+    <script src="https://atle-skjelbred.github.io/It1/Kortdata.js"></script>
     <div id="input">
       <label for="gliderHue">Velg fargetone (hue)</label>
       <input type="range" min="1" max="360" value="180" id="gliderHue" />
@@ -115,7 +122,6 @@
       Double
     </div>
 
-
     <div id="hoved">
       <img id="imagePreview" />
       <h1 id="Navnoutput"></h1>
@@ -126,7 +132,61 @@
       <h5 id="Jaoutput"></h5>
     </div>
 
+    <button onclick="h();saveToLocalStorage()">Lagre</button>
+    <button onclick="clearLocalStorage()">Slett Local Storage</button>
+    <select id="Liste">
+      <option value="0" disabled selected hidden>Velg bruker</option>
+    </select>
     <script>
+
+      
+      function DatoOutput() {
+        var DatoValue = document.getElementById('Dato').value
+        document.getElementById('Datooutput').innerHTML = DatoValue
+        InfoObject.Dato = DatoValue
+      }
+      const InfoObject = {
+        navn: '',
+        stilling: '',
+        Dato: '',
+        Sex: '',
+        Mobil: '',
+        Førerkort: '',
+      }
+      var ListeEl = document.getElementById('Liste')
+      function h() {
+        const infoObject = {
+          navn: InfoObject.navn,
+          stilling: InfoObject.stilling,
+          Dato: InfoObject.Dato,
+          Sex: InfoObject.Sex,
+          Mobil: InfoObject.Mobil,
+          Førerkort: InfoObject.Førerkort,
+        }
+        vissitkort.kortArray.push(infoObject)
+
+        ListeEl.innerHTML += '<option>' + infoObject.navn + '</option>'
+      }
+      for (element in vissitkort.kortArray) {
+        ListeEl.innerHTML +=
+          '<option>' + vissitkort.kortArray[element].navn + '</option>'
+      }
+
+      ListeEl.onchange = function a() {
+        Navn.value = vissitkort.kortArray[ListeEl.selectedIndex - 1].navn
+        NavnOutput()
+        Stilling.value =
+          vissitkort.kortArray[ListeEl.selectedIndex - 1].stilling
+        StillingOutput()
+        Dato.value = vissitkort.kortArray[ListeEl.selectedIndex - 1].Dato
+        DatoOutput()
+        Sex.value = vissitkort.kortArray[ListeEl.selectedIndex - 1].Sex
+        SexOutput()
+        Mobil.value = vissitkort.kortArray[ListeEl.selectedIndex - 1].Mobil
+        MobilOutput() 
+      }
+      
+
       var fargeEL = document.querySelector('#farge')
 
       var SolidBorderEL = document.querySelector('#SolidBorder')
@@ -171,24 +231,24 @@
           document.getElementById('Jaoutput').innerHTML = 'Har førerkort'
         }
       }
+      
 
       function NavnOutput() {
         var NavnValue = document.getElementById('Navn').value
         document.getElementById('Navnoutput').innerHTML = NavnValue
+        InfoObject.navn = NavnValue
       }
 
       function StillingOutput() {
         var StillingValue = document.getElementById('Stilling').value
         document.getElementById('Stillingoutput').innerHTML = StillingValue
+        InfoObject.stilling = StillingValue
       }
 
-      function DatoOutput() {
-        var DatoValue = document.getElementById('Dato').value
-        document.getElementById('Datooutput').innerHTML = DatoValue
-      }
       function SexOutput() {
         var SexValue = document.getElementById('Sex').value
         document.getElementById('Sexoutput').innerHTML = SexValue
+        InfoObject.Sex = SexValue
       }
       function MobilOutput() {
         var MobilValue = document.getElementById('Mobil').value
@@ -196,6 +256,7 @@
         if (MobilValue == '') {
           document.getElementById('Mobiloutput').innerHTML = MobilValue
         }
+        InfoObject.Mobil = MobilValue
       }
 
       // Henter elementer
@@ -229,6 +290,58 @@
       }
 
       // Skriver hvilken farge som vises i resultat-elementet
+      function saveToLocalStorage() {
+  localStorage.setItem('infoObject', JSON.stringify(InfoObject));
+  localStorage.setItem('kortArray', JSON.stringify(vissitkort.kortArray));
+}
+
+// Gjenopprett informasjonen fra Local Storage
+function restoreFromLocalStorage() {
+  const infoObject = JSON.parse(localStorage.getItem('infoObject'));
+  const kortArray = JSON.parse(localStorage.getItem('kortArray'));
+
+  if (infoObject) {
+    InfoObject.navn = infoObject.navn;
+    InfoObject.stilling = infoObject.stilling;
+    InfoObject.Dato = infoObject.Dato;
+    InfoObject.Sex = infoObject.Sex;
+    InfoObject.Mobil = infoObject.Mobil;
+    InfoObject.Førerkort = infoObject.Førerkort;
+
+    // Oppdaterer input-feltene med gjenopprettede verdier
+    document.getElementById('Navn').value = infoObject.navn;
+    document.getElementById('Stilling').value = infoObject.stilling;
+    document.getElementById('Dato').value = infoObject.Dato;
+    document.getElementById('Sex').value = infoObject.Sex;
+    document.getElementById('Mobil').value = infoObject.Mobil;
+    if (infoObject.Førerkort === 'Ja') {
+      document.getElementById('Ja').checked = true;
+    } else {
+      document.getElementById('Nei').checked = true;
+    }
+  }
+
+  if (kortArray) {
+    vissitkort.kortArray = kortArray;
+
+    // Oppdaterer select-elementet med gjenopprettede verdier
+    var ListeEl = document.getElementById('Liste');
+    ListeEl.innerHTML = '<option value="0" disabled selected hidden>Velg bruker</option>';
+
+    for (var i = 0; i < kortArray.length; i++) {
+      ListeEl.innerHTML += '<option>' + kortArray[i].navn + '</option>';
+    }
+  }
+}
+
+// Kaller restoreFromLocalStorage-funksjonen når siden lastes
+window.addEventListener('load', restoreFromLocalStorage);
+function clearLocalStorage() {
+  localStorage.clear();
+}
+
+
+
     </script>
   </body>
 </html>
