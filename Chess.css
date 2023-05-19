@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #9ed4eb;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  #sjakkbrett {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  
+  .rute {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .rute.lys {
+    background-color: #f0d9b5;
+  }
+  
+  .rute.mørk {
+    background-color: #b58863;
+  }
+  
+  .dronning {
+    color: #d92027;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+  }
+  
