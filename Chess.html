@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kan dronningen ta den andre?</title>
+  <title>Kan brikkene ta hverandre?</title>
   <link rel="stylesheet" type="text/css" href="https://atle-skjelbred.github.io/It1/Chess.css">
 </head>
 <body>
   <div class="container">
-    <h1>Kan dronningen ta den andre?</h1>
+    <h1>Kan brikkene ta hverandre?</h1>
     <div id="sjakkbrett"></div>
 
-    <h2>Posisjonen av dronningene</h2>
-    <label for="dronning1-rad">Dronning 1 rad(1-8):</label>
-    <input type="number" id="dronning1-rad" min="1" max="8">
-    <label for="dronning1-kolonne">Dronning 1 kolonne(1-8):</label>
-    <input type="number" id="dronning1-kolonne" min="1" max="8">
+    <h2>Posisjonen av brikkene</h2>
+    <label for="brikke1-rad">Hvit Brikke 1 kolonne(1-8):</label>
+    <input type="number" id="brikke1-rad" min="1" max="8">
+    <label for="brikke1-kolonne">Hvit Brikke 1 rad(1-8):</label>
+    <input type="number" id="brikke1-kolonne" min="1" max="8">
 
-    <label for="dronning2-rad">Dronning 2 rad(1-8):</label>
-    <input type="number" id="dronning2-rad" min="1" max="8">
-    <label for="dronning2-kolonne">Dronning 2 kolonne(1-8):</label>
-    <input type="number" id="dronning2-kolonne" min="1" max="8">
+    <label for="brikke2-rad">Sort Brikke 2 kolonne(1-8):</label>
+    <input type="number" id="brikke2-rad" min="1" max="8">
+    <label for="brikke2-kolonne">Sort Brikke 2 rad(1-8):</label>
+    <input type="number" id="brikke2-kolonne" min="1" max="8">
 
-    <button onclick="sjekkDronninger()">Sjekk</button>
+    <label for="valg">Velg type:</label>
+    <select id="valg">
+      <option value="dronninger">Dronninger</option>
+      <option value="hester">Hester</option>
+    </select>
+
+    <button onclick="sjekkBrikker()">Sjekk</button>
 
     <div id="resultat"></div>
   </div>
